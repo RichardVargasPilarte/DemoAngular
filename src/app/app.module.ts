@@ -16,7 +16,7 @@ import { CrearProductoComponent } from './components/productos/crear-producto/cr
   declarations: [
     AppComponent,
     ListarProductoComponent,
-    CrearProductoComponent
+    CrearProductoComponent,
   ],
   imports: [
     BrowserModule,

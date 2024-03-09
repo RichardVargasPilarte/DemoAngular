@@ -20,7 +20,7 @@ export class CrearProductoComponent implements OnInit {
               private _productoService: ProductoService,
               private aRouter: ActivatedRoute) { 
     this.productoForm = this.fb.group({
-      producto: ['', Validators.required],
+      nombre: ['', Validators.required],
       categoria: ['', Validators.required],
       ubicacion: ['', Validators.required],
       precio: ['', Validators.required],
@@ -35,7 +35,7 @@ export class CrearProductoComponent implements OnInit {
   agregarProducto() {
 
     const producto: Producto = {
-      nombre: this.productoForm.get('producto')?.value,
+      nombre: this.productoForm.get('nombre')?.value,
       categoria: this.productoForm.get('categoria')?.value,
       ubicacion: this.productoForm.get('ubicacion')?.value,
       precio: this.productoForm.get('precio')?.value,
@@ -73,7 +73,7 @@ export class CrearProductoComponent implements OnInit {
       this.titulo = 'Editar producto';
       this._productoService.obtenerProducto(this.id).subscribe(data => {
         this.productoForm.setValue({
-          producto: data.nombre,
+          nombre: data.nombre,
           categoria: data.categoria,
           ubicacion: data.ubicacion,
           precio: data.precio,
